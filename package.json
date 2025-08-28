@@ -1,6 +1,6 @@
 {
   "name": "dev-team-workflow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Claude Code commands for business analysis and workflow automation",
   "bin": {
     "dev-team-workflow": "bin/install.js"
