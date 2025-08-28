@@ -1,0 +1,18 @@
+{
+  "name": "dev-team-workflow",
+  "version": "1.0.0",
+  "description": "Claude Code commands for business analysis and workflow automation",
+  "bin": {
+    "install-jn-commands": "./bin/install.js"
+  },
+  "keywords": ["claude-code", "business-analyst", "workflow", "automation"],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zolem/dev-team-workflow.git"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
