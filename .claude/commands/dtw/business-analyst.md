@@ -9,8 +9,8 @@ I'll guide you through systematic brainstorming to create a complete brief.
 
 ## Setup Instructions (Run immediately when command starts)
 
-1. Read `$HOME/.claude/resources/dtw/business-analyst/templates/project-brief-template.md`
-2. Read `$HOME/.claude/resources/dtw/business-analyst/templates/feature-brief-template.md` 
+1. Read `$HOME/.claude/resources/dtw/business-analyst/templates/opportunity-canvas-template.md`
+2. Read `$HOME/.claude/resources/dtw/business-analyst/templates/customer-experience-brief-template.md` 
 3. Read `$HOME/.claude/resources/dtw/business-analyst/brainstorming-techniques.md`
 4. Then start the session below
 
@@ -21,17 +21,41 @@ I'll guide you through systematic brainstorming to create a complete brief.
 ## Initial Setup (Ask questions one at a time)
 
 **Start with Question 1 only:**
-Which type of brief?
-- A) New Project 
-- B) Feature Enhancement
+Which phase of business analysis?
+- A) Phase 1: Opportunity Canvas (Problem validation & stakeholder analysis)
+- B) Phase 2: Customer Experience Brief (Solution design & user validation)
 
-**After Question 1 is answered, ask Question 2:**
+**IMPORTANT: If user selects Phase 2, immediately ask:**
+"What is the file path to your completed Opportunity Canvas from Phase 1? (Phase 2 requires a completed Phase 1)"
+
+- If they provide a path: Read and validate the Opportunity Canvas file exists and is complete
+- If they cannot provide a path: "Phase 2 requires a completed Opportunity Canvas. Please complete Phase 1 first or provide the path to your existing Phase 1 document."
+
+**After Phase validation, ask Question 2:**
 Where should I save the final brief?
 - A) Local file in `/docs/`
 - B) Confluence page with Jira integration
 
+**If user selects B (Confluence), immediately ask Question 2b:**
+"I need the following Atlassian details:"
+
+**For Confluence Parent Location:**
+Provide the Confluence URL of where you want this document created as a child page.
+
+Examples:
+- Folder: `https://yoursite.atlassian.net/wiki/spaces/SPACE/folder/1234567890`
+- Page: `https://yoursite.atlassian.net/wiki/spaces/SPACE/pages/9876543210`
+
+I'll extract the page/folder ID from your URL (e.g., `1234567890` or `9876543210`)
+
+**For Jira Integration:**
+- Parent Initiative Key or Epic Key (e.g., PROJ-123) 
+- Jira Project Key (e.g., PROJ) if creating new tickets
+
+**Validation:** I'll use Atlassian MCP tools to verify these exist before proceeding.
+
 **After Question 2 is answered, ask Question 3:**
-What's your initial concept? (can be rough)
+What's your initial concept? (can be rough - for Phase 1) OR What solution are you validating? (for Phase 2)
 
 ---
 
