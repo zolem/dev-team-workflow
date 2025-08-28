@@ -9,9 +9,9 @@ I'll guide you through systematic brainstorming to create a complete brief.
 
 ## Setup Instructions (Run immediately when command starts)
 
-1. Read `./templates/project-brief-template.md`
-2. Read `./templates/feature-brief-template.md` 
-3. Read `./brainstorming-techniques.md`
+1. Read `../../resources/dtw/business-analyst/templates/project-brief-template.md`
+2. Read `../../resources/dtw/business-analyst/templates/feature-brief-template.md` 
+3. Read `../../resources/dtw/business-analyst/brainstorming-techniques.md`
 4. Then start the session below
 
 ---

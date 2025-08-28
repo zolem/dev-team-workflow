@@ -5,20 +5,21 @@ const path = require('path');
 const https = require('https');
 const os = require('os');
 
-const REPO_BASE = 'https://api.github.com/repos/zolem/dev-team-workflow/contents/.claude/commands';
+const REPO_COMMANDS_BASE = 'https://api.github.com/repos/zolem/dev-team-workflow/contents/.claude/commands';
+const REPO_RESOURCES_BASE = 'https://api.github.com/repos/zolem/dev-team-workflow/contents/.claude/resources';
 
 function getGlobalClaudeDir() {
   // Check if user has custom Claude config directory
   if (process.env.CLAUDE_CONFIG_DIR) {
-    return path.join(process.env.CLAUDE_CONFIG_DIR, 'commands');
+    return process.env.CLAUDE_CONFIG_DIR;
   }
   
   // Fall back to default locations
   const platform = os.platform();
   const home = os.homedir();
   
-  // Default to ~/.claude/commands for all platforms
-  return path.join(home, '.claude', 'commands');
+  // Default to ~/.claude for all platforms
+  return path.join(home, '.claude');
 }
 
 async function fetchJSON(url) {
@@ -74,15 +75,22 @@ async function installCommands() {
   console.log('📥 Installing Dev Team Workflow commands globally...');
   
   const globalDir = getGlobalClaudeDir();
+  const commandsDir = path.join(globalDir, 'commands');
+  const resourcesDir = path.join(globalDir, 'resources');
   console.log(`Installing to: ${globalDir}`);
   
   try {
-    await downloadDirectory(REPO_BASE, globalDir);
+    // Install commands
+    await downloadDirectory(REPO_COMMANDS_BASE, commandsDir);
+    
+    // Install resources
+    await downloadDirectory(REPO_RESOURCES_BASE, resourcesDir);
     
     console.log('✅ Installation complete!');
     console.log('');
     console.log('Available commands:');
-    console.log('  @business-analyst - Interactive brief creation');
+    console.log('  @dtw - Dev Team Workflow tools');
+    console.log('  @dtw business-analyst - Interactive brief creation');
     console.log('');
     console.log('Run any command to get started!');
     
@@ -98,14 +106,33 @@ async function uninstallCommands() {
   console.log('🗑️  Uninstalling Dev Team Workflow commands...');
   
   const globalDir = getGlobalClaudeDir();
-  console.log(`Removing from: ${globalDir}`);
+  const commandsDir = path.join(globalDir, 'commands');
+  const resourcesDir = path.join(globalDir, 'resources');
+  const dtwCommandsDir = path.join(commandsDir, 'dtw');
+  const dtwResourcesDir = path.join(resourcesDir, 'dtw');
+  console.log(`Removing DTW files from: ${globalDir}`);
   
   try {
-    if (fs.existsSync(globalDir)) {
-      fs.rmSync(globalDir, { recursive: true, force: true });
+    let removed = false;
+    
+    // Remove dtw commands directory
+    if (fs.existsSync(dtwCommandsDir)) {
+      fs.rmSync(dtwCommandsDir, { recursive: true, force: true });
+      console.log('Removed: commands/dtw/ directory');
+      removed = true;
+    }
+    
+    // Remove dtw resources directory
+    if (fs.existsSync(dtwResourcesDir)) {
+      fs.rmSync(dtwResourcesDir, { recursive: true, force: true });
+      console.log('Removed: resources/dtw/ directory');
+      removed = true;
+    }
+    
+    if (removed) {
       console.log('✅ Uninstallation complete!');
     } else {
-      console.log('ℹ️  No commands found to uninstall.');
+      console.log('ℹ️  No DTW commands found to uninstall.');
     }
   } catch (error) {
     console.error('❌ Uninstallation failed:', error.message);
