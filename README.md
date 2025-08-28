@@ -11,14 +11,14 @@ npx dev-team-workflow install
 ## 📋 Available Commands
 
 ### /dtw business-analyst
-Interactive guided session for creating project and feature briefs with systematic brainstorming.
+Interactive guided session with Alex, your Senior Business Analyst, for systematic business analysis using a proven 2-phase approach.
 
 **Features:**
-- Project brief creation
-- Feature enhancement analysis  
-- Template-driven questioning
-- Confluence/Jira integration
-- Systematic brainstorming techniques
+- **Phase 1:** Opportunity Canvas (Problem validation & stakeholder analysis)
+- **Phase 2:** Customer Experience Brief (Solution design & user validation)  
+- Template-driven questioning with built-in phase dependencies
+- Confluence/Jira integration with proper parent location handling
+- Evidence-based analysis and systematic brainstorming techniques
 
 ## 🗂️ Project Structure
 
@@ -32,8 +32,8 @@ Interactive guided session for creating project and feature briefs with systemat
         └── business-analyst/
             ├── brainstorming-techniques.md
             └── templates/
-                ├── project-brief-template.md
-                └── feature-brief-template.md
+                ├── opportunity-canvas-template.md
+                └── customer-experience-brief-template.md
 ```
 
 ## 📦 Installation
@@ -70,7 +70,11 @@ Once installed, use:
 /dtw business-analyst
 ```
 
-This will start an interactive session that guides you through creating comprehensive project or feature briefs.
+This will start an interactive session with Alex that guides you through the 2-phase business analysis process:
+- **Phase 1:** Problem validation and opportunity assessment
+- **Phase 2:** Solution design and customer validation (requires completed Phase 1)
+
+**Template Customization:** The command uses templates from your home folder by default, but will prioritize any custom templates you place in your project's `.claude/resources/dtw/business-analyst/templates/` directory.
 
 ## 🤝 Contributing
 
