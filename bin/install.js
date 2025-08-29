@@ -24,7 +24,7 @@ function getGlobalClaudeDir() {
 
 async function fetchJSON(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'jn-llm-workflow-installer' } }, (res) => {
+    https.get(url, { headers: { 'User-Agent': 'dev-team-workflow-installer' } }, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
