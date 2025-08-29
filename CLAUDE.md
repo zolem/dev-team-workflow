@@ -46,18 +46,26 @@ npx dev-team-workflow help
 **Claude Command Structure**
 ```
 .claude/
-├── commands/dtw/business-analyst.md    # Interactive BA command
-└── resources/dtw/business-analyst/
-    ├── brainstorming-techniques.md
-    └── templates/
-        ├── opportunity-canvas-template.md
-        └── customer-experience-brief-template.md
+├── commands/dtw/
+│   ├── business-analyst.md             # Interactive BA command
+│   └── product-manager.md              # Interactive PM command
+└── resources/dtw/
+    ├── business-analyst/
+    │   ├── brainstorming-techniques.md
+    │   └── templates/
+    │       ├── opportunity-canvas-template.md
+    │       └── customer-experience-brief-template.md
+    └── product-manager/
+        ├── pm-methodologies.md
+        └── templates/
+            └── requirements-gtm-template.md
 ```
 
-### Business Analysis Templates
+### Pipeline Templates & Methodologies
 
-The system implements a two-phase business analysis approach:
+The system implements a multi-phase approach with specialized templates:
 
+#### Business Analysis (Phase 1-2)
 **Phase 1: Opportunity Canvas**
 - Problem validation and stakeholder analysis
 - Evidence-based opportunity assessment
@@ -67,6 +75,17 @@ The system implements a two-phase business analysis approach:
 - Solution design and user validation
 - Requires completed Phase 1
 - User research and journey mapping
+
+**Methodologies:** Brainstorming techniques (Mind Mapping, SCAMPER, HMW, 5 Whys)
+
+#### Product Management (Phase 3)
+**Requirements & GTM Template**
+- Detailed feature requirements with iteration planning
+- Risk assessment and dependency tracking
+- Comprehensive go-to-market strategy
+- Release planning (Alpha/Beta/GA phases)
+
+**Methodologies:** MoSCoW prioritization, RICE scoring, User Story Mapping, Jobs-to-be-Done, Kano Model, RAID analysis
 
 ### Template Philosophy
 
@@ -92,12 +111,12 @@ Commands are designed to integrate with Atlassian/Confluence via MCP tools:
 - Maintains professional formatting consistency
 
 ### Interactive Command Structure
-The Business Analyst command (`business-analyst.md`) follows this pattern:
-- Persona-based introduction (Alex, Senior BA)
+Both persona commands (`business-analyst.md`, `product-manager.md`) follow this pattern:
+- Persona-based introduction with expertise and approach
 - Setup instructions that run immediately
-- Template loading with fallback priority
+- Template and methodology loading with fallback priority
 - Systematic Q&A flow with validation
-- Phase dependency enforcement (Phase 2 requires Phase 1)
+- Pipeline dependency enforcement (PM requires completed BA phases)
 
 ## Working with This Codebase
 
@@ -142,8 +161,11 @@ Commands use MCP Atlassian tools for:
 - Maintaining document relationships
 - Professional template formatting
 
-### Future Pipeline Integration
-Templates are designed for eventual integration with:
-- Product Manager commands (Phase 4: Requirements & GTM)
-- Engineering Manager commands (Phase 3: Technical Feasibility) 
-- Developer task generation from completed analysis
+### Pipeline Integration
+Current implementation status:
+- ✅ **Business Analyst** - Opportunity Canvas & Customer Experience Brief
+- ✅ **Product Manager** - Requirements & Go-to-Market Strategy
+- 🔄 **Architect** - Technical Feasibility Assessment (planned next)
+- 🔄 **Engineering Manager** - Implementation Planning (planned)
+- 🔄 **Quality Assurance Engineer** - Test Strategy (planned)
+- 🔄 **Developer** - Task Generation (planned)

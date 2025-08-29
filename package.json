@@ -1,13 +1,14 @@
 {
   "name": "dev-team-workflow",
-  "version": "1.0.5",
-  "description": "Claude Code commands for business analysis and workflow automation",
+  "version": "1.1.0",
+  "description": "Claude Code commands for business analysis, product management, and workflow automation",
   "bin": {
     "dev-team-workflow": "bin/install.js"
   },
   "keywords": [
     "claude-code",
     "business-analyst",
+    "product-manager",
     "workflow",
     "automation"
   ],

@@ -20,26 +20,42 @@ Interactive guided session with Alex, your Senior Business Analyst, for systemat
 - Confluence/Jira integration with proper parent location handling
 - Evidence-based analysis and systematic brainstorming techniques
 
+### /dtw product-manager
+Interactive guided session with Jordan, your Senior Product Manager, for detailed requirements definition and go-to-market planning.
+
+**Features:**
+- **Requirements Planning:** Detailed iteration planning with in/out scope definition
+- **GTM Strategy:** Comprehensive launch planning with phased rollout approach
+- **Risk Assessment:** RAID analysis and pre-mortem planning
+- **Stakeholder Management:** RACI matrix and influence mapping
+- **Methodologies:** MoSCoW prioritization, RICE scoring, User Story Mapping, Kano Model
+- **Pipeline Integration:** Requires completed BA phases, prepares handoff for Architect
+
 ## 🗂️ Project Structure
 
 ```
 .claude/
 ├── commands/
 │   └── dtw/
-│       └── business-analyst.md     # Business analyst command
+│       ├── business-analyst.md     # Business analyst command
+│       └── product-manager.md      # Product manager command
 └── resources/
     └── dtw/
-        └── business-analyst/
-            ├── brainstorming-techniques.md
+        ├── business-analyst/
+        │   ├── brainstorming-techniques.md
+        │   └── templates/
+        │       ├── opportunity-canvas-template.md
+        │       └── customer-experience-brief-template.md
+        └── product-manager/
+            ├── pm-methodologies.md
             └── templates/
-                ├── opportunity-canvas-template.md
-                └── customer-experience-brief-template.md
+                └── requirements-gtm-template.md
 ```
 
 ## 📦 Installation
 
 The installer creates a clean, namespaced installation in your global Claude config (~/.claude):
-- Creates the `/dtw business-analyst` slash command in the commands directory
+- Creates `/dtw business-analyst` and `/dtw product-manager` slash commands
 - Keeps all support files organized in the resources directory
 - Avoids conflicts with other Claude commands
 - Provides clean uninstall functionality
@@ -64,17 +80,28 @@ If the automated installer doesn't work, you can manually copy the files:
 
 ## 🎯 Usage
 
-Once installed, use:
+Once installed, start with business analysis:
 
 ```
 /dtw business-analyst
 ```
 
-This will start an interactive session with Alex that guides you through the 2-phase business analysis process:
+Interactive session with Alex for 2-phase business analysis:
 - **Phase 1:** Problem validation and opportunity assessment
-- **Phase 2:** Solution design and customer validation (requires completed Phase 1)
+- **Phase 2:** Solution design and customer validation
 
-**Template Customization:** The command uses templates from your home folder by default, but will prioritize any custom templates you place in your project's `.claude/resources/dtw/business-analyst/templates/` directory.
+Then proceed to product management:
+
+```
+/dtw product-manager
+```
+
+Interactive session with Jordan for requirements and go-to-market planning:
+- Reads your completed BA documents automatically
+- Creates detailed requirements with iteration planning
+- Develops comprehensive GTM strategy and risk assessment
+
+**Template Customization:** Commands prioritize project-local templates in `.claude/resources/dtw/` over global defaults.
 
 ## 🤝 Contributing
 
