@@ -90,7 +90,8 @@ async function installCommands() {
     console.log('');
     console.log('Available commands:');
     console.log('  @dtw - Dev Team Workflow tools');
-    console.log('  @dtw business-analyst - Interactive brief creation');
+    console.log('  @dtw business-analyst - Interactive business analysis');
+    console.log('  @dtw product-manager - Requirements & GTM planning');
     console.log('');
     console.log('Run any command to get started!');
     
