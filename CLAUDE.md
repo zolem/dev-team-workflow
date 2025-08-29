@@ -48,17 +48,22 @@ npx dev-team-workflow help
 .claude/
 ├── commands/dtw/
 │   ├── business-analyst.md             # Interactive BA command
-│   └── product-manager.md              # Interactive PM command
+│   ├── product-manager.md              # Interactive PM command
+│   └── architect.md                    # Interactive Architect command
 └── resources/dtw/
     ├── business-analyst/
     │   ├── brainstorming-techniques.md
     │   └── templates/
     │       ├── opportunity-canvas-template.md
     │       └── customer-experience-brief-template.md
-    └── product-manager/
-        ├── pm-methodologies.md
+    ├── product-manager/
+    │   ├── pm-methodologies.md
+    │   └── templates/
+    │       └── requirements-gtm-template.md
+    └── architect/
+        ├── architecture-methodologies.md
         └── templates/
-            └── requirements-gtm-template.md
+            └── technical-feasibility-template.md
 ```
 
 ### Pipeline Templates & Methodologies
@@ -87,6 +92,15 @@ The system implements a multi-phase approach with specialized templates:
 
 **Methodologies:** MoSCoW prioritization, RICE scoring, User Story Mapping, Jobs-to-be-Done, Kano Model, RAID analysis
 
+#### System Architecture (Phase 4)
+**Technical Feasibility Assessment**
+- System architecture and technology stack recommendations
+- Performance and scalability planning
+- Security architecture design
+- Technical risk assessment and mitigation strategies
+
+**Methodologies:** Domain-Driven Design (DDD), Event Storming, C4 Model, Microservices patterns, Technology Decision Matrix, Technical Risk Analysis
+
 ### Template Philosophy
 
 Templates are designed to:
@@ -110,12 +124,12 @@ Commands are designed to integrate with Atlassian/Confluence via MCP tools:
 - Maintains professional formatting consistency
 
 ### Interactive Command Structure
-Both persona commands (`business-analyst.md`, `product-manager.md`) follow this pattern:
+All persona commands (`business-analyst.md`, `product-manager.md`, `architect.md`) follow this pattern:
 - Persona-based introduction with expertise and approach
 - Setup instructions that run immediately
 - Template and methodology loading with fallback priority
 - Systematic Q&A flow with validation
-- Pipeline dependency enforcement (PM requires completed BA phases)
+- Pipeline dependency enforcement (PM requires completed BA phases, Architect requires completed PM phase)
 
 ## Working with This Codebase
 
@@ -164,7 +178,7 @@ Commands use MCP Atlassian tools for:
 Current implementation status:
 - ✅ **Business Analyst** - Opportunity Canvas & Customer Experience Brief
 - ✅ **Product Manager** - Requirements & Go-to-Market Strategy
-- 🔄 **Architect** - Technical Feasibility Assessment (planned next)
-- 🔄 **Engineering Manager** - Implementation Planning (planned)
+- ✅ **Architect** - Technical Feasibility Assessment & System Architecture Design
+- 🔄 **Engineering Manager** - Implementation Planning (planned next)
 - 🔄 **Quality Assurance Engineer** - Test Strategy (planned)
 - 🔄 **Developer** - Task Generation (planned)
