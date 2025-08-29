@@ -91,7 +91,6 @@ The system implements a multi-phase approach with specialized templates:
 
 Templates are designed to:
 - Generate documents consumable by downstream LLM agents
-- Maintain compatibility with existing JobNimbus Confluence templates
 - Provide structured markdown for reliable parsing
 - Capture complete context to prevent information loss between phases
 

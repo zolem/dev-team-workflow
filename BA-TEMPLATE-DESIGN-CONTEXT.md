@@ -20,14 +20,14 @@ Each persona produces documents that feed the next persona in the chain, ultimat
 ## Template Development Decisions
 
 ### Source Material Analysis
-We analyzed the existing templates in the repository and compared them with JobNimbus company templates found in Confluence:
+We analyzed the existing templates in the repository and compared them with company templates found in Confluence:
 
 **Current Repository Templates:**
 - `opportunity-canvas-template.md` - Problem validation and stakeholder analysis (Phase 1)
 - `customer-experience-brief-template.md` - Solution design and user validation (Phase 2)
 - `brainstorming-techniques.md` - Supporting resource for analysis techniques
 
-**JobNimbus Confluence Templates (4-phase approach):**
+**Company Confluence Templates (4-phase approach):**
 1. **Product Discovery Hub** - Main coordination page with document ownership
 2. **Opportunity Canvas** - Problem definition and validation
 3. **Customer Experience Brief** - Solution design and user testing
@@ -36,7 +36,7 @@ We analyzed the existing templates in the repository and compared them with JobN
 
 ### Key Insights from Analysis
 
-#### JobNimbus Approach Benefits
+#### Company Template Approach Benefits
 - **Phased validation**: Each phase validates assumptions before moving forward
 - **Risk mitigation**: Avoids over-investing in solutions for unvalidated problems
 - **Resource efficiency**: Iterative approach prevents waste on wrong solutions
@@ -72,7 +72,7 @@ After analysis, we determined the optimal persona split for the 4-phase approach
 
 ### Structure Approach
 We chose to **maintain the familiar Confluence template structure** while **enhancing each section with additional detail**. This approach provides:
-- **Familiarity** for users already using JobNimbus templates
+- **Familiarity** for users already using company templates
 - **Enhanced analysis** with more comprehensive guidance
 - **Logical organization** of detailed content under recognizable headings
 - **Professional consistency** with company standards
@@ -182,6 +182,6 @@ These new templates **complement rather than replace** the existing templates:
 ```
 
 ## Related Documentation
-- **JobNimbus Confluence Templates:** https://jobnimbus.atlassian.net/wiki/spaces/PROD/pages/4325376054/TEMPLATE+Initiative+Name+-+Product+Discovery+Hub
+- **Company Confluence Templates:** [Template documentation available in company Confluence]
 - **Repository README:** [Link when available]
 - **Command Documentation:** [Link to BA command documentation when available]
