@@ -158,3 +158,75 @@ This document outlines the system architecture methodologies used by the Archite
 5. **Rationale** - Why was this the best choice?
 6. **Trade-offs** - What are we giving up with this choice?
 7. **Success Metrics** - How will we measure success?
+
+## Engineering-Level Technical Questions
+
+### Database Design Questions
+- "What's your expected data growth rate and how will you partition large tables?"
+- "Which columns need composite indexes and what's your query access pattern?"
+- "How will you handle database migrations with zero downtime?"
+- "What's your strategy for handling database connection pooling under high load?"
+- "Do you need read replicas and how will you handle read/write splitting?"
+
+### API Design Questions
+- "What's your API rate limiting strategy and how will you implement sliding windows?"
+- "How will you version your APIs and handle backward compatibility?"
+- "What's your pagination strategy for large result sets?"
+- "How will you implement idempotent operations for critical endpoints?"
+- "What's your circuit breaker configuration for external service calls?"
+
+### Performance & Concurrency Questions
+- "What are your specific latency targets (P50/P95/P99) and how will you measure them?"
+- "How will you handle race conditions in your critical data paths?"
+- "What's your caching invalidation strategy and cache-aside vs write-through approach?"
+- "How will you implement optimistic locking for high-contention resources?"
+- "What's your strategy for handling thundering herd problems?"
+
+### Security Implementation Questions
+- "How will you implement JWT token refresh and revocation?"
+- "What's your RBAC model and how will you handle permission inheritance?"
+- "How will you implement rate limiting per user/tenant/API key?"
+- "What's your encryption key rotation strategy?"
+- "How will you handle security headers and CORS policies?"
+
+### Infrastructure Questions
+- "What's your container resource allocation strategy and horizontal pod autoscaler configuration?"
+- "How will you implement blue/green deployments with database migrations?"
+- "What's your service mesh configuration for traffic management?"
+- "How will you handle distributed tracing correlation IDs across service boundaries?"
+- "What's your disaster recovery RPO/RTO and backup verification strategy?"
+
+### Frontend Architecture Questions
+- "What's your component composition strategy and how will you prevent prop drilling?"
+- "How will you implement code splitting and what's your chunk loading strategy?"
+- "What's your client-side caching strategy for API responses and how long should cache TTL be?"
+- "How will you handle optimistic updates and conflict resolution when APIs fail?"
+- "What's your bundle size budget and how will you enforce it in CI?"
+
+### Frontend Performance Questions
+- "What are your Core Web Vitals targets and how will you measure them in production?"
+- "How will you implement virtual scrolling for large lists and what's your viewport strategy?"
+- "What's your image optimization pipeline and responsive image serving strategy?"
+- "How will you handle memory leaks in long-running SPAs?"
+- "What's your strategy for reducing main thread blocking and implementing time slicing?"
+
+### Frontend State Management Questions
+- "How will you normalize state and handle entity relationships in the client?"
+- "What's your strategy for handling stale data and background refetching?"
+- "How will you implement undo/redo functionality and state persistence?"
+- "What's your approach to handling concurrent state updates from multiple users?"
+- "How will you manage form state and validation across multi-step workflows?"
+
+### Frontend Build & Deployment Questions
+- "What's your tree-shaking strategy and how will you eliminate dead code?"
+- "How will you implement progressive loading and what's your critical path CSS strategy?"
+- "What's your CDN strategy for static assets and cache invalidation?"
+- "How will you handle feature flags in the frontend and runtime configuration?"
+- "What's your A/B testing implementation and how will you track conversion funnels?"
+
+### Frontend Security Questions
+- "How will you implement CSP policies and what's your nonce generation strategy?"
+- "What's your strategy for preventing XSS in user-generated content?"
+- "How will you handle sensitive data in local storage and session management?"
+- "What's your approach to CSRF protection in SPAs?"
+- "How will you implement secure file uploads and validate file types client-side?"

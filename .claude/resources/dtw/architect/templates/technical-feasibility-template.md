@@ -32,23 +32,23 @@ Each section includes a prompt (in the blue info boxes) to guide your thinking. 
 
 {FEASIBILITY_ASSESSMENT}
 
-### Technical Prerequisites
-**Missing Infrastructure:**
-- {MISSING_INFRA_1}
-- {MISSING_INFRA_2}
-- {MISSING_INFRA_3}
+**Feasibility Verdict:** {FEASIBLE/NOT_FEASIBLE/CONDITIONAL}
 
-**Spike Work Completed:**
-- {SPIKE_WORK_1}
-- {SPIKE_WORK_2}
-- {SPIKE_WORK_3}
+**Technical Prerequisites:**
+- {TECHNICAL_PREREQ_1}
+- {TECHNICAL_PREREQ_2}
+- {TECHNICAL_PREREQ_3}
+
+**Spike Work Summary:**
+- {SPIKE_SUMMARY_1}
+- {SPIKE_SUMMARY_2}
+- {SPIKE_SUMMARY_3}
 
 **Critical Dependencies:**
-| Dependency | Owner | Timeline | Impact if Delayed |
-|------------|-------|----------|------------------|
-| {DEPENDENCY_1} | {DEP_OWNER_1} | {DEP_TIMELINE_1} | {DEP_IMPACT_1} |
-| {DEPENDENCY_2} | {DEP_OWNER_2} | {DEP_TIMELINE_2} | {DEP_IMPACT_2} |
-| {DEPENDENCY_3} | {DEP_OWNER_3} | {DEP_TIMELINE_3} | {DEP_IMPACT_3} |
+| Dependency | Owner | Timeline | Risk Level | Impact if Delayed |
+|------------|-------|----------|------------|------------------|
+| {DEPENDENCY_1} | {DEP_OWNER_1} | {DEP_TIMELINE_1} | {DEP_RISK_1} | {DEP_IMPACT_1} |
+| {DEPENDENCY_2} | {DEP_OWNER_2} | {DEP_TIMELINE_2} | {DEP_RISK_2} | {DEP_IMPACT_2} |
 
 ---
 
@@ -56,29 +56,11 @@ Each section includes a prompt (in the blue info boxes) to guide your thinking. 
 
 _Proposed technical solution has been reviewed by Architecture leaders. Include important notes & decisions made._
 
-{ARCHITECTURE_DECISIONS}
+{ARCHITECTURE_REVIEW_SUMMARY}
 
-### System Architecture Overview
-**Architecture Pattern:** {ARCHITECTURE_PATTERN}
+**High-Level Approach:** {HIGH_LEVEL_APPROACH}
 **Technology Stack:** {TECHNOLOGY_STACK}
-**Integration Approach:** {INTEGRATION_APPROACH}
-
-### Key Architectural Decisions
-| Decision | Options Considered | Choice Made | Rationale |
-|----------|-------------------|-------------|-----------|
-| {DECISION_1} | {OPTIONS_1} | {CHOICE_1} | {RATIONALE_1} |
-| {DECISION_2} | {OPTIONS_2} | {CHOICE_2} | {RATIONALE_2} |
-| {DECISION_3} | {OPTIONS_3} | {CHOICE_3} | {RATIONALE_3} |
-
-### Performance & Scalability Design
-**Performance Targets:** {PERFORMANCE_TARGETS}
-**Scalability Approach:** {SCALABILITY_APPROACH}
-**Monitoring Strategy:** {MONITORING_STRATEGY}
-
-### Security Architecture
-**Authentication Method:** {AUTH_METHOD}
-**Data Protection:** {DATA_PROTECTION}
-**Compliance Requirements:** {COMPLIANCE_REQS}
+**Architecture Pattern:** {ARCHITECTURE_PATTERN}
 
 ---
 
