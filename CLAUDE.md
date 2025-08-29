@@ -49,7 +49,7 @@ npx dev-team-workflow help
 ├── commands/dtw/
 │   ├── business-analyst.md             # Interactive BA command
 │   ├── product-manager.md              # Interactive PM command
-│   └── architect.md                    # Interactive Architect command
+│   └── architect.md                    # Interactive Architect command (3-phase)
 └── resources/dtw/
     ├── business-analyst/
     │   ├── brainstorming-techniques.md
@@ -63,7 +63,9 @@ npx dev-team-workflow help
     └── architect/
         ├── architecture-methodologies.md
         └── templates/
-            └── technical-feasibility-template.md
+            ├── technical-feasibility-template.md
+            ├── system-architecture-design-template.md
+            └── frontend-architecture-design-template.md
 ```
 
 ### Pipeline Templates & Methodologies
@@ -92,14 +94,23 @@ The system implements a multi-phase approach with specialized templates:
 
 **Methodologies:** MoSCoW prioritization, RICE scoring, User Story Mapping, Jobs-to-be-Done, Kano Model, RAID analysis
 
-#### System Architecture (Phase 4)
-**Technical Feasibility Assessment**
-- System architecture and technology stack recommendations
-- Performance and scalability planning
-- Security architecture design
-- Technical risk assessment and mitigation strategies
+#### System Architecture (Phase 4-6)
+**Phase 4: Technical Feasibility Assessment**
+- Can we build it? What's missing? What are the risks?
+- High-level technical approach and effort estimation
+- Stakeholder go/no-go decision document
 
-**Methodologies:** Domain-Driven Design (DDD), Event Storming, C4 Model, Microservices patterns, Technology Decision Matrix, Technical Risk Analysis
+**Phase 5: Backend System Architecture Design**
+- Complete UML diagrams, API specifications, database schemas with indexes
+- Performance engineering, security implementation, deployment architecture
+- Backend engineering stories with technical acceptance criteria
+
+**Phase 6: Frontend Architecture Design**
+- Component architecture, state management, build system design
+- Performance optimization, security implementation, testing strategies
+- Frontend engineering stories with technical acceptance criteria
+
+**Methodologies:** Domain-Driven Design (DDD), Event Storming, C4 Model, Microservices patterns, Technology Decision Matrix, Technical Risk Analysis, Component Architecture Design, Frontend Performance Engineering
 
 ### Template Philosophy
 
@@ -129,7 +140,7 @@ All persona commands (`business-analyst.md`, `product-manager.md`, `architect.md
 - Setup instructions that run immediately
 - Template and methodology loading with fallback priority
 - Systematic Q&A flow with validation
-- Pipeline dependency enforcement (PM requires completed BA phases, Architect requires completed PM phase)
+- Pipeline dependency enforcement (PM requires completed BA phases, Architect Phase 2 requires Phase 1, Architect Phase 3 requires Phases 1-2)
 
 ## Working with This Codebase
 
@@ -178,7 +189,10 @@ Commands use MCP Atlassian tools for:
 Current implementation status:
 - ✅ **Business Analyst** - Opportunity Canvas & Customer Experience Brief
 - ✅ **Product Manager** - Requirements & Go-to-Market Strategy
-- ✅ **Architect** - Technical Feasibility Assessment & System Architecture Design
+- ✅ **Architect** - 3-Phase Implementation:
+  - Phase 1: Technical Feasibility Assessment (stakeholder decisions)
+  - Phase 2: Backend System Architecture Design (server-side engineering blueprints)
+  - Phase 3: Frontend Architecture Design (client-side engineering blueprints)
 - 🔄 **Engineering Manager** - Implementation Planning (planned next)
 - 🔄 **Quality Assurance Engineer** - Test Strategy (planned)
 - 🔄 **Developer** - Task Generation (planned)
