@@ -22,9 +22,10 @@ Each persona produces documents that feed the next persona in the chain, ultimat
 ### Source Material Analysis
 We analyzed the existing templates in the repository and compared them with JobNimbus company templates found in Confluence:
 
-**Existing Repository Templates:**
-- `feature-brief-template.md` - Comprehensive business analyst template for single features
-- `project-brief-template.md` - High-level project template for larger initiatives
+**Current Repository Templates:**
+- `opportunity-canvas-template.md` - Problem validation and stakeholder analysis (Phase 1)
+- `customer-experience-brief-template.md` - Solution design and user validation (Phase 2)
+- `brainstorming-techniques.md` - Supporting resource for analysis techniques
 
 **JobNimbus Confluence Templates (4-phase approach):**
 1. **Product Discovery Hub** - Main coordination page with document ownership
@@ -170,11 +171,14 @@ These new templates **complement rather than replace** the existing templates:
 ## File Organization
 
 ```
-.claude/resources/dtw/business-analyst/templates/
-├── feature-brief-template.md (existing)
-├── project-brief-template.md (existing)  
-├── opportunity-canvas-template.md (new)
-├── customer-experience-brief-template.md (new)
+.claude/resources/dtw/business-analyst/
+├── brainstorming-techniques.md
+└── templates/
+    ├── opportunity-canvas-template.md
+    └── customer-experience-brief-template.md
+
+.claude/commands/dtw/
+└── business-analyst.md (Interactive command implementation)
 ```
 
 ## Related Documentation
