@@ -31,6 +31,19 @@ Interactive guided session with Jordan, your Senior Product Manager, for detaile
 - **Methodologies:** MoSCoW prioritization, RICE scoring, User Story Mapping, Kano Model
 - **Pipeline Integration:** Requires completed BA phases, prepares handoff for Architect
 
+### /dtw architect
+Interactive guided session with Morgan, your Lead System Architect, for comprehensive technical architecture using a proven 3-phase approach.
+
+**Features:**
+- **Phase 1:** Technical Feasibility Assessment (Stakeholder go/no-go decision)
+- **Phase 2:** Backend System Architecture Design (Server-side engineering blueprints)
+- **Phase 3:** Frontend Architecture Design (Client-side engineering blueprints)
+- Complete UML diagrams, API specifications, database schemas with indexes (ASCII format)
+- Engineering-level technical questions for seasoned developers
+- Performance benchmarks, security implementation, deployment architecture
+- **Methodologies:** Domain-Driven Design, Event Storming, C4 Model, Technology Decision Matrix
+- **Pipeline Integration:** Requires completed PM phase, produces actionable engineering tickets
+
 ## 🗂️ Project Structure
 
 ```
@@ -38,7 +51,8 @@ Interactive guided session with Jordan, your Senior Product Manager, for detaile
 ├── commands/
 │   └── dtw/
 │       ├── business-analyst.md     # Business analyst command
-│       └── product-manager.md      # Product manager command
+│       ├── product-manager.md      # Product manager command
+│       └── architect.md            # System architect command (3-phase)
 └── resources/
     └── dtw/
         ├── business-analyst/
@@ -46,16 +60,22 @@ Interactive guided session with Jordan, your Senior Product Manager, for detaile
         │   └── templates/
         │       ├── opportunity-canvas-template.md
         │       └── customer-experience-brief-template.md
-        └── product-manager/
-            ├── pm-methodologies.md
+        ├── product-manager/
+        │   ├── pm-methodologies.md
+        │   └── templates/
+        │       └── requirements-gtm-template.md
+        └── architect/
+            ├── architecture-methodologies.md
             └── templates/
-                └── requirements-gtm-template.md
+                ├── technical-feasibility-template.md
+                ├── system-architecture-design-template.md
+                └── frontend-architecture-design-template.md
 ```
 
 ## 📦 Installation
 
 The installer creates a clean, namespaced installation in your global Claude config (~/.claude):
-- Creates `/dtw business-analyst` and `/dtw product-manager` slash commands
+- Creates `/dtw business-analyst`, `/dtw product-manager`, and `/dtw architect` slash commands
 - Keeps all support files organized in the resources directory
 - Avoids conflicts with other Claude commands
 - Provides clean uninstall functionality
@@ -100,6 +120,19 @@ Interactive session with Jordan for requirements and go-to-market planning:
 - Reads your completed BA documents automatically
 - Creates detailed requirements with iteration planning
 - Develops comprehensive GTM strategy and risk assessment
+
+Finally, complete technical architecture:
+
+```
+/dtw architect
+```
+
+Interactive session with Morgan for comprehensive technical architecture:
+- **Phase 1:** Technical feasibility assessment (stakeholder decisions)
+- **Phase 2:** Backend system architecture design (server-side engineering tickets)
+- **Phase 3:** Frontend architecture design (client-side engineering tickets)
+- Produces UML diagrams, API specs, database schemas with indexes
+- Engineering-level technical depth for precise ticket generation
 
 **Template Customization:** Commands prioritize project-local templates in `.claude/resources/dtw/` over global defaults.
 
